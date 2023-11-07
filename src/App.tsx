@@ -10,6 +10,7 @@ import {
 } from "@react-pdf/renderer";
 import Line from "./Line";
 import { toPng } from "html-to-image";
+import "./App.css";
 
 const App = () => {
   const styles = StyleSheet.create({
@@ -17,7 +18,6 @@ const App = () => {
       flexDirection: "column",
       alignItems: "center",
       marginTop: 20,
-      padding: 16,
     },
     chartTitle: {
       fontSize: 16,
@@ -53,14 +53,14 @@ const App = () => {
   );
 
   return (
-    <>
+    <div>
       <div ref={chartContainerRef}>
         <Line />
       </div>
       <PDFDownloadLink document={pdfContent} fileName="test.pdf">
         Save as PDF
       </PDFDownloadLink>
-    </>
+    </div>
   );
 };
 

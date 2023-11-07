@@ -18,7 +18,7 @@ export default function ResizableBox({
           display: "inline-block",
           width: "auto",
           background: "white",
-          padding: ".5rem",
+          padding: "2rem",
           borderRadius: "0.5rem",
           ...style,
         }}
