@@ -10,9 +10,15 @@ import {
 } from "@react-pdf/renderer";
 import Line from "./Line";
 import { toPng } from "html-to-image";
+import useDemoConfig from "./useDemoConfig";
 import "./App.css";
 
 const App = () => {
+  const { data, randomizeData } = useDemoConfig({
+    series: 10,
+    dataType: "time",
+  });
+
   const styles = StyleSheet.create({
     chartContainer: {
       flexDirection: "column",
@@ -34,7 +40,7 @@ const App = () => {
     }
 
     const dataUrl = toPng(chartContainerRef.current);
-    // @ts-expect-error ign
+    // @ts-expect-error FIXME:
     setChart(dataUrl);
   }, [chartContainerRef]);
 
@@ -54,8 +60,11 @@ const App = () => {
 
   return (
     <div>
+      <button onClick={randomizeData}>Randomize Data</button>
+      <br />
+      <br />
       <div ref={chartContainerRef}>
-        <Line />
+        <Line data={data} />
       </div>
       <PDFDownloadLink document={pdfContent} fileName="test.pdf">
         Save as PDF

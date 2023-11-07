@@ -180,7 +180,7 @@ function makeDataFrom(
 ) {
   return [
     ...new Array(series || Math.max(Math.round(Math.random() * 5), 1)),
-    // @ts-expect-error
+    // @ts-expect-error FIXME:
   ].map((d, i) => makeSeries(i, dataType, datums, useR));
 }
 

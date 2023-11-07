@@ -1,15 +1,21 @@
-import React from "react";
+import React, { FC } from "react";
 import { AxisOptions, Chart } from "react-charts";
-import useDemoConfig from "./useDemoConfig";
-// @ts-expect-error ign
+// @ts-expect-error FIXME:
 import ResizableBox from "./ResizableBox";
 
-export default function Line() {
-  const { data } = useDemoConfig({
-    series: 10,
-    dataType: "time",
-  });
+interface ILineChartData {
+  label: string;
+  data: {
+    primary: string | number | Date | null;
+    secondary: number | null;
+    radius: number | undefined;
+  }[];
+}
+interface ILineChart {
+  data: ILineChartData[];
+}
 
+const Line: FC<ILineChart> = ({ data }) => {
   const primaryAxis = React.useMemo<
     AxisOptions<(typeof data)[number]["data"][number]>
   >(
@@ -32,9 +38,6 @@ export default function Line() {
 
   return (
     <>
-      {/* <button onClick={randomizeData}>Randomize Data</button>
-      <br />
-      <br /> */}
       <ResizableBox>
         <Chart
           options={{
@@ -46,4 +49,6 @@ export default function Line() {
       </ResizableBox>
     </>
   );
-}
+};
+
+export default Line;
