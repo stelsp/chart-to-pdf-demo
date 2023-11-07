@@ -20,7 +20,6 @@ export default function ResizableBox({
           background: "white",
           padding: ".5rem",
           borderRadius: "0.5rem",
-          boxShadow: "0 30px 40px rgba(0,0,0,.1)",
           ...style,
         }}
       >

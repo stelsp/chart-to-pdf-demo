@@ -17,6 +17,7 @@ const App = () => {
       flexDirection: "column",
       alignItems: "center",
       marginTop: 20,
+      padding: 16,
     },
     chartTitle: {
       fontSize: 16,
