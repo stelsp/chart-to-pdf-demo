@@ -155,7 +155,7 @@ export default function useChartConfig({
             }))
           }
         >
-          {options[option].map((d: any) => (
+          {options[option].map((d) => (
             <option value={d as string} key={d.toString()}>
               {d.toString()}
             </option>

@@ -1,10 +1,11 @@
 import React from "react";
 import { AxisOptions, Chart } from "react-charts";
 import useDemoConfig from "./useDemoConfig";
+// @ts-expect-error ign
 import ResizableBox from "./ResizableBox";
 
 export default function Line() {
-  const { data, randomizeData } = useDemoConfig({
+  const { data } = useDemoConfig({
     series: 10,
     dataType: "time",
   });

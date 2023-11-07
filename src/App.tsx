@@ -25,7 +25,7 @@ const App = () => {
   });
 
   const chartContainerRef = useRef(null);
-  const [chart, setChart] = useState<any>(null);
+  const [chart, setChart] = useState(null);
 
   useEffect(() => {
     if (chartContainerRef.current === null) {
@@ -33,7 +33,7 @@ const App = () => {
     }
 
     const dataUrl = toPng(chartContainerRef.current);
-
+    // @ts-expect-error ign
     setChart(dataUrl);
   }, [chartContainerRef]);
 
