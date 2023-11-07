@@ -155,7 +155,7 @@ export default function useChartConfig({
             }))
           }
         >
-          {options[option].map((d) => (
+          {options[option].map((d: any) => (
             <option value={d as string} key={d.toString()}>
               {d.toString()}
             </option>
@@ -180,6 +180,7 @@ function makeDataFrom(
 ) {
   return [
     ...new Array(series || Math.max(Math.round(Math.random() * 5), 1)),
+    // @ts-expect-error
   ].map((d, i) => makeSeries(i, dataType, datums, useR));
 }
 
