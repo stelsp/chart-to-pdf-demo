@@ -58,7 +58,6 @@ const App = () => {
           <>
             {chart && <Image src={() => toPng(chartContainerRef.current!)} />}
           </>
-          <Table data={data} />
         </View>
       </Page>
     </Document>
@@ -83,8 +82,6 @@ const App = () => {
       <br />
       <div ref={chartContainerRef}>
         <Line data={data} />
-      </div>
-      <div style={{ paddingTop: "1rem" }}>
         <Table data={data} />
       </div>
     </>
