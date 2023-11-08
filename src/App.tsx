@@ -11,13 +11,18 @@ import {
 import Line from "./Line";
 import { toPng } from "html-to-image";
 import useDemoConfig from "./useDemoConfig";
+// @ts-expect-error FIXME:
+import ResizableBox from "./ResizableBox";
 import "./App.css";
+import Table from "./Table";
 
 const App = () => {
   const { data, randomizeData } = useDemoConfig({
     series: 10,
     dataType: "time",
   });
+
+  console.log(data);
 
   const styles = StyleSheet.create({
     chartContainer: {
@@ -53,23 +58,36 @@ const App = () => {
           <>
             {chart && <Image src={() => toPng(chartContainerRef.current!)} />}
           </>
+          <Table data={data} />
         </View>
       </Page>
     </Document>
   );
 
   return (
-    <div>
-      <button onClick={randomizeData}>Randomize Data</button>
-      <br />
+    <>
+      <div
+        style={{
+          margin: "0 auto",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "1rem",
+        }}
+      >
+        <button onClick={randomizeData}>Randomize Data</button>
+        <PDFDownloadLink document={pdfContent} fileName="test.pdf">
+          Save as PDF
+        </PDFDownloadLink>
+      </div>
       <br />
       <div ref={chartContainerRef}>
         <Line data={data} />
       </div>
-      <PDFDownloadLink document={pdfContent} fileName="test.pdf">
-        Save as PDF
-      </PDFDownloadLink>
-    </div>
+      <div style={{ paddingTop: "1rem" }}>
+        <Table data={data} />
+      </div>
+    </>
   );
 };
 

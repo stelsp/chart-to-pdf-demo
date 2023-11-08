@@ -3,7 +3,7 @@ import { AxisOptions, Chart } from "react-charts";
 // @ts-expect-error FIXME:
 import ResizableBox from "./ResizableBox";
 
-interface ILineChartData {
+export interface ILineChartData {
   label: string;
   data: {
     primary: string | number | Date | null;

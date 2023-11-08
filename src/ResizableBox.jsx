@@ -5,8 +5,8 @@ import "react-resizable/css/styles.css";
 
 export default function ResizableBox({
   children,
-  width = 800,
-  height = 500,
+  width = 1000,
+  height = 600,
   resizable = true,
   style = {},
   className = "",
