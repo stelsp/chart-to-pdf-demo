@@ -74,8 +74,8 @@ const Area = () => {
           <ComposedChart
             key={ix}
             syncId="area"
-            width={500}
-            height={200}
+            width={800}
+            height={250}
             data={el}
             margin={{
               top: 20,

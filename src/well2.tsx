@@ -74,8 +74,8 @@ const Well2 = () => {
           <ComposedChart
             key={ix}
             syncId="well14"
-            width={500}
-            height={200}
+            width={800}
+            height={250}
             data={el}
             margin={{
               top: 20,

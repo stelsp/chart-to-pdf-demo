@@ -74,8 +74,8 @@ const Reper = () => {
           <ComposedChart
             key={ix}
             syncId="reper"
-            width={500}
-            height={200}
+            width={800}
+            height={250}
             data={el}
             margin={{
               top: 20,
