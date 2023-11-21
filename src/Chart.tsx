@@ -254,7 +254,6 @@ const CustomTooltip = ({ active, payload }: any) => {
           border: "1px solid black",
         }}
       >
-        {/* ${payload[0].name}  */}
         <p
           style={{
             margin: "0",
