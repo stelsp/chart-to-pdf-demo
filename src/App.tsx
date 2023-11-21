@@ -1,9 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-import Chart from "./Chart";
+import { useEffect, useRef, useState } from "react";
 import {
   Document,
   Page,
-  Text,
   View,
   StyleSheet,
   Image,
